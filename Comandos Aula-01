@@ -3,5 +3,115 @@
 ## Containers
 
 ````bash
+    docker run --name postgresql -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=cad_user -p 5432:5432 -d bitnami/postgresql:latest
 ````
 
+## Comandos utilizados na aula
+````bash
+
+    -- Primeiro teste
+    docker run hello-world
+
+    -- Verificar se o docker esta instalado
+    docker -v
+    
+    -- Comando para realizar o login Docker CLI para baixar imagens do Docker Hub
+    docker login
+
+     -- Contruindo a imagem docker
+    docker run --name postgresql -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=cad_user bitnami/postgresql:latest
+
+    ```
+        Esse comando Docker docker run é usado para iniciar um novo container a partir da imagem Bitnami PostgreSQL, uma imagem pré-configurada do PostgreSQL fornecida pela Bitnami.
+
+        Aqui está uma explicação dos principais elementos desse comando:
+
+        docker run: Este comando é usado para criar e executar um novo container a partir de uma imagem Docker.
+
+        --name postgresql: Define o nome do container como "postgresql". Isso facilita a referência ao container em operações futuras.
+
+        -e POSTGRESQL_USERNAME=docker: Esse parâmetro define uma variável de ambiente dentro do container chamada "POSTGRESQL_USERNAME" com o valor "docker". Esta variável é usada para configurar o nome de usuário do PostgreSQL.
+
+        -e POSTGRESQL_PASSWORD=docker: Similarmente ao anterior, este parâmetro define uma variável de ambiente chamada "POSTGRESQL_PASSWORD" com o valor "docker". Esta variável é usada para configurar a senha do PostgreSQL.
+
+        -e POSTGRESQL_DATABASE=cad_user: Este parâmetro define uma variável de ambiente chamada "POSTGRESQL_DATABASE" com o valor "cad_user". Esta variável é usada para configurar o nome do banco de dados PostgreSQL que será criado.
+
+        bitnami/postgresql:latest: Especifica a imagem Docker a ser usada para iniciar o container. Neste caso, é a imagem Bitnami PostgreSQL, na sua versão mais recente (tag "latest").
+
+        Em resumo, esse comando cria e inicia um novo container Docker chamado "postgresql" usando a imagem Bitnami PostgreSQL, configurando um usuário, senha e banco de dados para o PostgreSQL dentro do container. Essas configurações podem ser personalizadas conforme necessário para atender aos requisitos do seu projeto.
+    ```
+
+    -- Listar todas as imagens
+    docker images
+    docker image list
+
+    -- Informações sobre as imagens Docker
+    docker images --help
+
+    -- Listar os id númericos das imagens
+    docker images -q
+
+    -- Removendo imagens por id
+    docker image rmi ID_DA_IMAGEM
+    
+    -- Para listar todas as imagens não pendentes que não estão marcadas ou referenciadas por um novo container
+    docker images -f dangling=false
+    
+    -- Listar todos os containers Docker presentes no seu sistema, incluindo os que estão em execução (ativo) e os que estão parados (inativo)
+    docker ps -a
+
+    docker: Indica que você está utilizando o utilitário Docker para interagir com os containers.
+    ps: É uma abreviação de "process status". Neste contexto, ele lista os containers Docker.
+    -a ou --all: Este argumento instrui o Docker a mostrar todos os containers, incluindo aqueles que não estão em execução no momento.
+
+    -- Listar Contêineres
+    docker container ls
+
+    -- Isto ocorre pelo hello-world ser um contêiner de testes apenas, então para vê-lo listado, precisamos executar o comando com --all no final.
+    docker container ls --all
+
+    -- Parar todos os contêineres em execução
+    docker stop $(docker ps -a -q)
+
+    -- Iniciando um contêiner 
+    docker container start ID_DO_CONTAINER
+
+    -- Parando um contêiner
+    docker container stop ID_DO_CONTAINER
+
+    -- Lista completa do que podemos fazer com um contêiner
+    docker container --help
+
+    -- Removendo um contêiner (Container parado)
+    docker container rm ID_DO_CONTAINER or docker rm $(docker ps -a -q)
+
+    -- Excluir um contêiner específico (que não estiver em execução).
+    docker rm [nome do contêiner]
+
+    -- Exibir os logs (registros) de um contêiner.
+    docker logs [nome do contêiner]
+
+
+
+
+````
+## Install Node
+````bash
+
+    --Install Node.js stable version
+    sudo apt install nodejs -y
+
+    -- Install npm
+    sudo apt install npm -y
+
+    -- Verificar a instalação Node.js version
+    nodejs --version
+
+    -- Verificar a instalação do npm.
+    npm --version
+````
+
+## Projeto Prático
+````bash
+
+````
