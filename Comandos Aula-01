@@ -1,11 +1,5 @@
 #Docker
 
-## Containers
-
-````bash
-    docker run --name postgresql -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=cad_user -p 5432:5432 -d bitnami/postgresql:latest
-````
-
 ## Comandos utilizados na aula
 ````bash
 
@@ -90,28 +84,5 @@
 
     -- Exibir os logs (registros) de um contêiner.
     docker logs [nome do contêiner]
-
-
-
-
-````
-## Install Node
-````bash
-
-    --Install Node.js stable version
-    sudo apt install nodejs -y
-
-    -- Install npm
-    sudo apt install npm -y
-
-    -- Verificar a instalação Node.js version
-    nodejs --version
-
-    -- Verificar a instalação do npm.
-    npm --version
 ````
 
-## Projeto Prático
-````bash
-https://blog.rocketseat.com.br/introducao-ao-docker-criando-um-servidor-web-com-node-js-e-subindo-para-o-container/
-````
